@@ -1,0 +1,25 @@
+<div class="title-block">
+	<div class="title">
+		<h1>ブックマーク</h1>
+	</div>
+	<div class="user-status">
+		<% if current_user.present? %>
+			<h5><%= current_user.name %>さんがログインしています</h5>
+		<% end %>
+	</div>
+</div>
+<div class="content-block">
+</div>
+<div class="confirm-block">
+	<div class="confirm-list">
+		<ul>
+			<% if current_user.present? %>
+				<li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+			<% else %>
+				<li><%= link_to 'ログイン', login_path %></li>
+			<% end %>
+			<li><%= link_to 'ユーザー登録', new_user_path %></li>
+			<li><%= link_to 'アプリ追加', new_app_path %></li>
+		</ul>
+	</div>
+</div>
